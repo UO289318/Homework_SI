@@ -19,14 +19,14 @@ drop table Competitions;
 
 --Pal homework
 create table Competitions (
-    id int primary key not null,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name text not null,
     date not null,
     description varchar(32)
 );
 
 create table Athletes (
-    id int primary key not null,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     dni varchar(9),
     name text not null,
     email text
@@ -41,6 +41,6 @@ create table Registrations (
     FOREIGN KEY(athlete_id) REFERENCES Athletes(id)
 );
 
-
-INSERT INTO Competitions (name, date, description) VALUES ('Carrera San Silvestre', '2023-12-31', 'Carrera fin de año');
-INSERT INTO Competitions (name, date, description) VALUES ('Maratón Gijón', '2024-05-15', '42km por la costa');
+-- como tenemos date >= CURRENT_DATE tenemos q poner fechas pal futuro
+INSERT INTO Competitions (name, date, description) VALUES ('Carrera San Silvestre', '2026-12-31', 'Carrera fin de año');
+INSERT INTO Competitions (name, date, description) VALUES ('Maratón Gijón', '2027-05-15', '42km por la costa');
