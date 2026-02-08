@@ -1,24 +1,15 @@
-import java.util.ArrayList;
-import java.util.List;
+package model;
 
 public class Competition {
+    private int id;
     private String name;
-    private List<Athlete> registeredAthletes;
 
-    public Competition(String name) {
+    public Competition(int id, String name) {
+        this.id = id;
         this.name = name;
-        this.registeredAthletes = new ArrayList<>();
     }
-
-    public void registerAthlete(Athlete athlete) {
-        this.registeredAthletes.add(athlete);
-    }
-
-    public List<Athlete> getRegisteredAthletes() {
-        return registeredAthletes;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    @Override
+    public String toString() { return name; } // Importante para que el ComboBox muestre el nombre
 }

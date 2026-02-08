@@ -1,14 +1,15 @@
+package model;
+
 public class Athlete {
+    private int id;
     private String name;
-    private String email;
 
-    public Athlete(String name, String email) {
+    public Athlete(int id, String name) {
+        this.id = id;
         this.name = name;
-        this.email = email;
     }
-
+    public int getId() { return id; }
+    public String getName() { return name; }
     @Override
-    public String toString() {
-        return "Athlete: " + name + " (" + email + ")";
-    }
+    public String toString() { return name; }
 }
